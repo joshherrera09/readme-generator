@@ -1,5 +1,5 @@
 # README Generator
-[![Build Status](https://img.shields.io/badge/MIT-license-red)
+![Build Status](https://img.shields.io/badge/MIT-license-red)
 ## Table of Contents
 - Description
 - Table of Contents
