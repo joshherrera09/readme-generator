@@ -1,105 +1,146 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-var generateMardown = require('generateMarkdown.js');
+const inquirer = require("inquirer");
+const fs = require("fs");
+// var generateMardown = require('./generateMarkdown.js');
 
-inquirer
-    // Prompt the user of README information
-    .prompt([
-        {
-            type: 'input',
-            message: 'What is the title of your project?',
-            name: 'title'
-        },
-        {
-            type: 'input',
-            message: 'Give a short description of your project',
-            name: 'description'
-        },
-        {
-            type: 'input',
-            message: 'What are the steps required to install your project?',
-            name: 'installation'
-        },
-        {
-            type: 'input',
-            message: 'Provide instructions and examples for use. Include screenshots if needed.',
-            name: 'usage'
-        },
-        {
-            type: 'checkbox',
-            message: 'Choose a license',
-            name: 'license',
-            choices: ['MIT', 'Apache', 'GPL', 'ISC']
-        },
-        {
-            type: 'input',
-            message: 'Input badge code. (See https://shields.io for more info)',
-            name: 'badge'
-        },
-        {
-            type: 'input',
-            message: 'Add guidelines for contributing',
-            name: 'contributing'
-        },
-        {
-            type: 'input',
-            message: 'Please provide code examples for testing',
-            name: 'tests'
-        },
-        {
-            type: 'input',
-            message: 'Please provide GitHUb username',
-            name: 'github'
-        },
-        {
-            type: 'input',
-            message: 'Please provide email address',
-            name: 'email'
-        },
-       
-    ]).then(function(answers) {
-        // To add links to the table of contents
-        const { title, description, installation, usage, license, badge, contributing, tests, github, email } = answers;
+const questions = [
+    {
+      type: "input",
+      message: "What is the title of your project?",
+      name: "title",
+    },
+    {
+      type: "input",
+      message: "Give a short description of your project",
+      name: "description",
+    },
+    {
+      type: "input",
+      message: "What are the steps required to install your project?",
+      name: "installation",
+    },
+    {
+      type: "input",
+      message:
+        "Provide instructions and examples for use. Include screenshots if needed.",
+      name: "usage",
+    },
+    {
+      type: "checkbox",
+      message: "Choose a license",
+      name: "license",
+      choices: ["MIT", "Apache", "GPL", "ISC"],
+    },
+    {
+      type: "input",
+      message: "Input badge code. (See https://shields.io for more info)",
+      name: "badge",
+    },
+    {
+      type: "input",
+      message: "Add guidelines for contributing",
+      name: "contributing",
+    },
+    {
+      type: "input",
+      message: "Please provide code examples for testing",
+      name: "tests",
+    },
+    {
+      type: "input",
+      message: "Please provide GitHUb username",
+      name: "github",
+    },
+    {
+      type: "input",
+      message: "Please provide email address",
+      name: "email",
+    },
+    {
+        type: 'input',
+        message: 'Enter names for your table of contents, seperated by a comma',
+        name: 'contents'
+    }
+  ]
 
-        // README template literal
-        const readMe = `# ${title}
-        [GitHub License](${badge})
+  
 
-        ## ${description}
+      inquirer  
+        .prompt(questions).then(response => {
+            console.log(response);
+            fs.appendFileSync('newREADME.md', ('# ' + response.title) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## *Table of Contents*
+            fs.appendFileSync('newREADME.md', ('[![Build Status](' + response.badge + ')') + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        - [Description](#description)
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [Contributing](#contributing)
-        - [Tests](#tests)
-        - [Questions](#questions)
+            fs.appendFileSync('newREADME.md', ('## Table of Contents' + '\n' + '- ' + response.contents.split(', ').join('\n' + '- ')) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Description
-        ${description}
+            fs.appendFileSync('newREADME.md', ('## Description' + '\n' + response.description) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Installation
-        ${installation}
+            fs.appendFileSync('newREADME.md', ('## Installation' + '\n' + response.installation) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Usage
-        ${usage}
+            fs.appendFileSync('newREADME.md', ('## Usage' + '\n' + response.usage) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## License
-        ${license}
+            fs.appendFileSync('newREADME.md', ('## License' + '\n' + response.license) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Contributing
-        ${contributing}
+            fs.appendFileSync('newREADME.md', ('## Contributing' + '\n' + response.contributing) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Tests
-        ${tests}
+            fs.appendFileSync('newREADME.md', ('## Testing' + '\n' + response.tests) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-        ## Questions
-        For repository information visit ${github}
-        And for additional questions, contact me at ${email}
-        `
-    })
+            fs.appendFileSync('newREADME.md', ('## Questions' + '\n' + 'For repository please visit https://github.com/' + response.github) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
 
-    // Write the README file 
-
-
+            fs.appendFileSync('newREADME.md', ('\n' + 'To contact me with further questions you can email me at: ' + response.email) + '\n', function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('Success');
+            });
+        });
