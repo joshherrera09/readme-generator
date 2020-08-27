@@ -1,7 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+var generateMardown = require('generateMarkdown.js');
 
 inquirer
+    // Prompt the user of README information
     .prompt([
         {
             type: 'input',
@@ -31,7 +33,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Input badge code. (See https://shields.io)',
+            message: 'Input badge code. (See https://shields.io for more info)',
             name: 'badge'
         },
         {
@@ -54,12 +56,9 @@ inquirer
             message: 'Please provide email address',
             name: 'email'
         },
-        {
-            type: 'input',
-            message: 'PLease write out your table of contents seperated by commas',
-            name: 'contents'
-        }
+       
     ]).then(function(answers) {
+        // To add links to the table of contents
         const { title, description, installation, usage, license, badge, contributing, tests, github, email } = answers;
 
         // README template literal
@@ -100,5 +99,7 @@ inquirer
         And for additional questions, contact me at ${email}
         `
     })
+
+    // Write the README file 
 
 
