@@ -20,18 +20,23 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please provide instructions and examples for use. Include screenshots if needed.',
+            message: 'Provide instructions and examples for use. Include screenshots if needed.',
             name: 'usage'
         },
         {
-            type: 'list',
-            message: 'Which license would you like to use?',
+            type: 'checkbox',
+            message: 'Choose a license',
             name: 'license',
             choices: ['MIT', 'Apache', 'GPL', 'ISC']
         },
         {
             type: 'input',
-            message: 'Please list all project contributors',
+            message: 'Input badge code. (See https://shields.io)',
+            name: 'badge'
+        },
+        {
+            type: 'input',
+            message: 'Add guidelines for contributing',
             name: 'contributing'
         },
         {
@@ -48,5 +53,52 @@ inquirer
             type: 'input',
             message: 'Please provide email address',
             name: 'email'
+        },
+        {
+            type: 'input',
+            message: 'PLease write out your table of contents seperated by commas',
+            name: 'contents'
         }
-    ])
+    ]).then(function(answers) {
+        const { title, description, installation, usage, license, badge, contributing, tests, github, email } = answers;
+
+        // README template literal
+        const readMe = `# ${title}
+        [GitHub License](${badge})
+
+        ## ${description}
+
+        ## *Table of Contents*
+
+        - [Description](#description)
+        - [Installation](#installation)
+        - [Usage](#usage)
+        - [Contributing](#contributing)
+        - [Tests](#tests)
+        - [Questions](#questions)
+
+        ## Description
+        ${description}
+
+        ## Installation
+        ${installation}
+
+        ## Usage
+        ${usage}
+
+        ## License
+        ${license}
+
+        ## Contributing
+        ${contributing}
+
+        ## Tests
+        ${tests}
+
+        ## Questions
+        For repository information visit ${github}
+        And for additional questions, contact me at ${email}
+        `
+    })
+
+
