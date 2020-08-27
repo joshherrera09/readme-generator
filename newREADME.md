@@ -1,26 +1,26 @@
-
 # README Generator
 [![Build Status](https://img.shields.io/badge/MIT-license-red)
 ## Table of Contents
 - Description
-- INstallation
+- Table of Contents
+- Installation
 - Usage
 - License
 - Contributing
 - Tests
 - Questions
 ## Description
-Intended to automatically generate a README.md file based on users answers to prompted questions
+This application is intended to automatically create a README file for your repository
 ## Installation
-npm init npm i inquirer
+I initialized npm with npm init.  Then I installed inquirer with npm i inquirer.
 ## Usage
-Run node index.js in the terminal and answer questions in relation to your project
+To use this application, you will run node index.js in the terminal and answer all of the questions in relation to your own project.  After answering all of the prompts, the README.md file will be created for you.
 ## License
 MIT
 ## Contributing
-Open to all contributors
+Contributions, issues and feature requests are welcome! See my contact information if you would like to contribute.
 ## Testing
-
+node index.js
 ## Questions
 For repository please visit https://github.com/joshherrera09
 

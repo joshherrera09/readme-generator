@@ -20,13 +20,12 @@ const questions = [
     },
     {
       type: "input",
-      message:
-        "Provide instructions and examples for use. Include screenshots if needed.",
+      message: "Provide instructions and examples for use. Include screenshots if needed.",
       name: "usage",
     },
     {
       type: "checkbox",
-      message: "Choose a license",
+      message: "Choose a license (Use spacebar to select)",
       name: "license",
       choices: ["MIT", "Apache", "GPL", "ISC"],
     },
@@ -62,8 +61,6 @@ const questions = [
     }
   ]
 
-  
-
       inquirer  
         .prompt(questions).then(response => {
             console.log(response);
@@ -74,14 +71,14 @@ const questions = [
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('[![Build Status](' + response.badge + ')') + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('![Build Status](' + response.badge + ')') + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Table of Contents' + '\n' + '- ' + response.contents.split(', ').join('\n' + '- ')) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Table of Contents' + '\n' + '- '  + response.contents.split(', ').join('\n' + '- ')) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
