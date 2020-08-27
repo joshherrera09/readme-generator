@@ -1,147 +1,27 @@
-# readme-generator# README Generator
-
-
-
-## Table of Contents
-
-This project was made so that the user can easily generate a README file for their repository
-
-npm init npm i inquirer
-
-undefined
-
-
-
-Open to all contributors
-
-
-
-undefined
 # README Generator
-
-
-
+![Build Status](https://img.shields.io/badge/MIT-license-red)
 ## Table of Contents
+- Description
+- Table of Contents
+- Installation
+- Usage
+- License
+- Contributing
+- Tests
+- Questions
 ## Description
-This project was intended to allow the user to easily generate a README file for any repository
+This application is intended to automatically create a README file for your repository
 ## Installation
-npm init npm i inquirer
+I initialized npm with npm init.  Then I installed inquirer with npm i inquirer.
 ## Usage
-Run node index.js in the terminal, follow the prompts to add information to your README
+To use this application, you will run node index.js in the terminal and answer all of the questions in relation to your own project.  After answering all of the prompts, the README.md file will be created for you.
 ## License
-
+MIT
 ## Contributing
-Open to all contributors
+Contributions, issues and feature requests are welcome! See my contact information if you would like to contribute.
 ## Testing
-None
+node index.js
 ## Questions
 For repository please visit https://github.com/joshherrera09
-To contact me with furhter questions you can email me at: joshherrera09@gmail.com
-# 
 
-## Table of Contents
-## Description
-
-## Installation
-
-## Usage
-
-## License
-
-## Contributing
-
-## Testing
-
-## Questions
-For repository please visit https://github.com/
-To contact me with further questions you can email me at: 
-# v
-verv
-## Table of Contents
-## Description
-e
-## Installation
-rverv
-## Usage
-rev
-## License
-
-## Contributing
-v
-## Testing
-erv
-## Questions
-For repository please visit https://github.com/errv
-To contact me with further questions you can email me at: rer
-# node index.js
-
-## Table of Contents
-## Description
-
-## Installation
-
-## Usage
-
-## License
-
-## Contributing
-
-## Testing
-
-## Questions
-For repository please visit https://github.com/
-To contact me with further questions you can email me at: 
-# 
-
-## Table of Contents
-## Description
-
-## Installation
-
-## Usage
-
-## License
-
-## Contributing
-
-## Testing
-
-## Questions
-For repository please visit https://github.com/
-To contact me with further questions you can email me at: 
-# josh
-
-## Table of Contents
-## Description
-
-## Installation
-
-## Usage
-
-## License
-
-## Contributing
-
-## Testing
-
-## Questions
-For repository please visit https://github.com/
-To contact me with further questions you can email me at: 
-# josh
-
-## Table of Contents
-## Description
-
-## Installation
-
-## Usage
-
-## License
-
-## Contributing
-
-## Testing
-
-## Questions
-For repository please visit https://github.com/
-To contact me with further questions you can email me at: 
+To contact me with further questions you can email me at: joshherrera09@gmail.com
