@@ -13,7 +13,12 @@ By using Node JS, this application will automatically generate a README file for
 ## Installation
 To begin setting up your development environment, you must first run `npm init` in the terminal, to set up a new npm package.  Once nom has been initialized, you must also run `npm i inquirer` in the terminal to install inquirer, which will install the inquirer and allow the user to ask and validate questions to help generate the README.  
 ## Usage
+[Application Sample Video](https://github.com/joshherrera09/readme-generator/blob/master/readme-generator-vid-sample.mov)
+Click 'View Raw" to view the video.
+
 After initializing npm and installing Inquirer, the user must run `node index.js` in the terminal.  The user will be prompted with a series of questions that should be answered in relation to your project.  After completing the questions, the README will automatically generate as a new file. 
+
+The screenshots below walk you through the coding proccess of the application
 
 #### Prompt Questions
 ![Prompt Questions](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.13.38%20AM.png)
