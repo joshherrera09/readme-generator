@@ -14,6 +14,27 @@ By using Node JS, this application will automatically generate a README file for
 To begin setting up your development environment, you must first run `npm init` in the terminal, to set up a new npm package.  Once nom has been initialized, you must also run `npm i inquirer` in the terminal to install inquirer, which will install the inquirer and allow the user to ask and validate questions to help generate the README.  
 ## Usage
 After initializing npm and installing Inquirer, the user must run `node index.js` in the terminal.  The user will be prompted with a series of questions that should be answered in relation to your project.  After completing the questions, the README will automatically generate as a new file. 
+
+#### Prompt Questions
+![Prompt Questions](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.13.38%20AM.png)
+
+#### generateTOC Function
+![generateTOC Functions](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.13.57%20AM.png)
+
+This function was used to generate the table of contents.
+
+#### Appending the File
+![Appending the File](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.14.07%20AM.png)
+
+#### Prompt Questions Example in Terminal
+![Terminal prompts](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.16.07%20AM.png)
+
+#### README File Automatically Generated
+![README File](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.13.20%20AM.png)
+
+#### README Preview
+![README Preview](https://github.com/joshherrera09/readme-generator/blob/master/images/Screen%20Shot%202020-09-01%20at%2011.17.38%20AM.png)
+
 ## License
 MIT
 ## Contributing
