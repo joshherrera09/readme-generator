@@ -64,6 +64,17 @@ const questions = [
       inquirer  
         .prompt(questions).then(response => {
             console.log(response);
+            
+            function generateTOC(contents) {
+                const tocArray = contents.split(',');
+                let tocString = '';
+                tocArray.forEach(function(content) {
+                  content = content.trim();
+                  tocString +=  `- [${content}](#${content.toLowerCase()})\n`;
+                });
+                return tocString;
+              }
+            
             fs.appendFileSync('newREADME.md', ('# ' + response.title) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
@@ -78,56 +89,56 @@ const questions = [
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Table of Contents' + '\n' + '- '  + response.contents.split(', ').join('\n' + '- ')) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Table of Contents\n' + generateTOC(response.contents)), function(err) {
+                if (err) {
+                  return console.log(err);
+                }
+                console.log('Success');
+              });
+
+            fs.appendFileSync('newREADME.md', ('## Description\n' + response.description) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Description' + '\n' + response.description) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Installation\n' + response.installation) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Installation' + '\n' + response.installation) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Usage\n' + response.usage) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Usage' + '\n' + response.usage) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## License\n' + response.license) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## License' + '\n' + response.license) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Contributing\n' + response.contributing) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Contributing' + '\n' + response.contributing) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Testing\n' + response.tests) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
                 console.log('Success');
             });
 
-            fs.appendFileSync('newREADME.md', ('## Testing' + '\n' + response.tests) + '\n', function(err) {
-                if (err) {
-                    return console.log(err);
-                }
-                console.log('Success');
-            });
-
-            fs.appendFileSync('newREADME.md', ('## Questions' + '\n' + 'For repository please visit https://github.com/' + response.github) + '\n', function(err) {
+            fs.appendFileSync('newREADME.md', ('## Questions\n' + 'For repository please visit https://github.com/' + response.github) + '\n', function(err) {
                 if (err) {
                     return console.log(err);
                 }
